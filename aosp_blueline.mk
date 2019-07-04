@@ -14,6 +14,29 @@
 # limitations under the License.
 #
 
+GAPPS_VARIANT := pico
+
+GAPPS_PRODUCT_PACKAGES += \
+    AndroidMigratePrebuilt \
+    CalculatorGoogle \
+    CalendarGooglePrebuilt \
+    Chrome \
+    GCS \
+    GoogleBackupTransport \
+    GoogleCamera \
+    GoogleContacts \
+    GoogleDialer \
+    Maps \
+    Phonesky \
+    Photos \
+    PixelLauncher \
+    PrebuiltBugle \
+    PrebuiltDeskClockGoogle \
+    PrebuiltGmail \
+    SetupWizard \
+    SoundPicker \
+    Wallpapers
+
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -39,3 +62,4 @@ PRODUCT_MODEL := AOSP on blueline
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
